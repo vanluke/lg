@@ -1,0 +1,209 @@
+@keyframes fadeIn {
+  from {
+    opacity: 0; }
+  to {
+    opacity: 1; } }
+.fade-in {
+  opacity: 0;
+  animation: fadeIn ease-in 1;
+  animation-fill-mode: forwards;
+  animation-duration: 1s; }
+
+.container {
+  font-size: x-large;
+  background: #000;
+  animation-delay: 0.7s; }
+  .container__navigation {
+    position: fixed;
+    background: #373B44;
+    width: 100%;
+    height: 2.4em;
+    top: 0;
+    opacity: .8;
+    z-index: 1; }
+
+.s-welcome {
+  width: 100%;
+  height: 100vh;
+  background: red;
+  text-align: center;
+  display: block;
+  position: relative;
+  padding: 15px; }
+  .s-welcome--container {
+    height: 90vh;
+    width: 100%;
+    top: 30%;
+    left: 0;
+    position: absolute; }
+  .s-welcome__header {
+    color: #fff; }
+  .s-welcome__avatar {
+    position: relative;
+    border-radius: 50%;
+    position: relative;
+    width: 10%;
+    transition: all 0.3s; }
+    .s-welcome__avatar:hover {
+      transform: scale(1.1); }
+  .s-welcome__footer {
+    background: #000;
+    height: 10vh;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    position: absolute; }
+
+.article {
+  position: relative;
+  display: block;
+  min-height: 9rem;
+  font-weight: 800;
+  width: 50%;
+  margin: 0 auto;
+  padding-top: 1.5rem; }
+
+.s-about {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background: #fff; }
+  .s-about__header {
+    position: relative;
+    padding-top: 1.5rem;
+    text-align: center; }
+  .s-about__paragraph {
+    font-weight: 800;
+    margin: 0 auto; }
+    .s-about__paragraph.c-links__link {
+      color: #000;
+      padding: 3px; }
+      .s-about__paragraph.c-links__link:hover {
+        cursor: pointer;
+        color: #2080f7;
+        background: rgba(255, 255, 255, 0.4);
+        border-radius: 5px; }
+
+.s-contact {
+  width: 100%;
+  height: 100vh;
+  background: #373B44;
+  position: relative; }
+  .s-contact__header {
+    color: #fff;
+    position: relative;
+    padding-top: 1.5rem;
+    height: 100px;
+    min-height: 9rem;
+    text-align: center; }
+  .s-contact__paragraph {
+    color: #fff;
+    position: relative;
+    width: 50%;
+    margin: 0 auto; }
+  .s-contact__links {
+    width: 100%;
+    font-size: 54px;
+    position: absolute;
+    text-align: center;
+    bottom: 10%; }
+
+.footer {
+  padding: 1% 5%;
+  text-align: center;
+  background-color: red;
+  color: white; }
+@element ('href') {
+  .footer {
+    color: #FE4B74;
+    font-weight: 500;
+    text-decoration: none; } }
+.c-links__link {
+  padding: 15px;
+  color: #fff; }
+  .c-links__link:hover {
+    cursor: pointer;
+    color: #2080f7;
+    background: rgba(255, 255, 255, 0.4);
+    border-radius: 5px; }
+
+.c-list {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  padding: 16px;
+  text-align: center; }
+  .c-list li {
+    padding: 16px; }
+    .c-list li a {
+      transition: .2s ease;
+      text-decoration: none;
+      color: #fff; }
+      .c-list li a:hover {
+        border-top: 2px solid #fff;
+        border-bottom: 2px solid #fff;
+        padding: 6px 0; }
+  .c-list--inline li {
+    display: inline; }
+
+.toggle, [id^=drop] {
+  display: none; }
+
+@media (max-width: 568px) {
+  nav {
+    margin: 0; }
+
+  .toggle + a,
+  .c-list {
+    display: none; }
+
+  .toggle {
+    display: block;
+    background-color: #254441;
+    padding: 0 20px;
+    color: #FFF;
+    font-size: 20px;
+    line-height: 60px;
+    text-decoration: none;
+    border: none; }
+
+  .toggle:hover {
+    background-color: #000; }
+
+  [id^=drop]:checked + .c-list {
+    display: block; }
+
+  nav ul {
+    display: block;
+    width: 100%; }
+
+  .c-list {
+    padding: 0;
+    background: #000; }
+    .c-list li {
+      display: block; }
+      .c-list li:hover {
+        background: #fff; }
+        .c-list li:hover a {
+          color: #000; }
+      .c-list li a:hover {
+        color: #000;
+        border: none; }
+
+  .article {
+    left: 0;
+    width: 100%;
+    text-align: center; } }
+@font-face {
+  font-family: 'PT Sans Narrow', sans-serif; }
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box; }
+
+body {
+  font-family: 'PT Sans Narrow', sans-serif;
+  font-size: small; }
+
+/*# sourceMappingURL=main.css.map */
