@@ -1,0 +1,25 @@
+@import './variables';
+@import './mixins';
+@import './frames';
+@import './fadein';
+@import './site';
+
+@font-face {
+  font-family: 'PT Sans Narrow', sans-serif;
+
+}
+@font-face {
+    font-family: 'PT Sans Narrow';
+    src: url(../fonts/PT_Sans-Narrow-Web-Regular.ttf) format("ttf");
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'PT Sans Narrow', sans-serif;
+  font-size: small;
+}

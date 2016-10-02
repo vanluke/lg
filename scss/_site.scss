@@ -1,0 +1,226 @@
+.container {
+  font-size: x-large;
+  background: $background-color;
+  animation-delay: 0.7s;
+  @include element('navigation') {
+    position: fixed;
+    background: #373B44;
+    width: 100%;
+    height: 2.4em;
+    top: 0;
+    opacity: .8;
+    z-index: 1;
+  }
+}
+
+.s-welcome {
+  width: 100%;
+  height: 100vh;
+  background: $background-welcome;
+  text-align: center;
+  display: block;
+  position: relative;
+  padding: 15px;
+  @include modifier('container') {
+    height: 90vh;
+    width: 100%;
+    top: 30%;
+    left: 0;
+    position: absolute;
+  }
+  @include element('header') {
+    color: $white;
+  }
+  @include element('avatar') {
+    position: relative;
+    border-radius: 50%;
+    position: relative;
+    width: 10%;
+    transition: all 0.3s;
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+  @include element('footer') {
+    background: $background-color;
+    height: 10vh;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    position: absolute;
+  }
+}
+
+.article {
+  position: relative;
+  display: block;
+  min-height: 9rem;
+  font-weight: 800;
+  width: 50%;
+  margin: 0 auto;
+  padding-top: 1.5rem;
+}
+
+.s-about {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background: $background-about;
+  @include element('header') {
+    position: relative;
+    padding-top: 1.5rem;
+    text-align: center;
+  }
+  @include element('paragraph') {
+    font-weight: 800;
+    margin: 0 auto;
+    &.c-links__link {
+      color: #000;
+      padding: 3px;
+      &:hover {
+        cursor: pointer;
+        color: $contact-href-color;
+        background: $contact-href-background;
+        border-radius: 5px;
+      }
+    }
+  }
+}
+
+.s-contact {
+  width: 100%;
+  height: 100vh;
+  background: $background-contact;
+  position: relative;
+  @include element('header') {
+    color: $white;
+    position: relative;
+    padding-top: 1.5rem;
+    height: 100px;
+    min-height: 9rem;
+    text-align: center;
+  }
+  @include element('paragraph') {
+    color: $white;
+    position: relative;
+    width: 50%;
+    margin: 0 auto;
+  }
+  @include element('links') {
+    width: 100%;
+    font-size: 54px;
+    position: absolute;
+    text-align: center;
+    bottom: 10%;
+  }
+}
+
+.footer {
+  padding: 1% 5%;
+  text-align: center;
+  background-color: red;
+  color: white;
+  @element('href') {
+    color: #FE4B74;
+    font-weight: 500;
+    text-decoration: none;
+  }
+}
+
+.c-links {
+  @include element('link') {
+    padding: 15px;
+    color: $white;
+    &:hover {
+      cursor: pointer;
+      color: $contact-href-color;
+      background: $contact-href-background;
+      border-radius: 5px;
+    }
+  }
+}
+
+.c-list {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  padding: 16px;
+  text-align: center;
+  li {
+    padding: 16px;
+    a {
+      transition: .2s ease;
+      text-decoration: none;
+      color: $white;
+      &:hover {
+        border-top: 2px solid $white;
+        border-bottom: 2px solid $white;
+        padding: 6px 0;
+      }
+    }
+  }
+  @include modifier('inline') {
+    li {
+      display: inline;
+    }
+  }
+}
+
+.toggle, [id^=drop] {
+  display: none;
+}
+
+@media (max-width: $breakpoint-max) {
+  nav {
+    margin: 0;
+  }
+  .toggle + a,
+  .c-list {
+    display: none;
+  }
+  .toggle {
+    display: block;
+    background-color: #254441;
+    padding: 0 20px;
+    color: #FFF;
+    font-size: 20px;
+    line-height: 60px;
+    text-decoration: none;
+    border: none;
+  }
+  .toggle:hover {
+    background-color: #000;
+  }
+  [id^=drop]:checked + .c-list {
+    display: block;
+  }
+  nav ul {
+    display: block;
+    width: 100%;
+  }
+  .c-list {
+    padding: 0;
+    background: #000;
+    li {
+      display: block;
+      &:hover {
+        background: $white;
+        a {
+          color: #000;
+        }
+      }
+      a {
+        &:hover {
+          color: #000;
+          border: none;
+        }
+      }
+    }
+  }
+  .article {
+    left: 0;
+    width: 100%;
+    text-align: center;
+  }
+}
