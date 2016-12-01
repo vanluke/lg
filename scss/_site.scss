@@ -1,15 +1,17 @@
 .container {
-  font-size: x-large;
+  font-size: 120%;
   background: $background-color;
-  animation-delay: 0.7s;
   @include element('navigation') {
     position: fixed;
     background: #373B44;
     width: 100%;
-    height: 2.4em;
+    height: 3.9rem;
     top: 0;
     opacity: .8;
     z-index: 1;
+    @media (max-width: $breakpoint-max) {
+        height: 0;
+    }
   }
 }
 
@@ -20,11 +22,11 @@
   text-align: center;
   display: block;
   position: relative;
-  padding: 15px;
+  padding: .9rem;
   @include modifier('container') {
     height: 90vh;
     width: 100%;
-    top: 30%;
+    top: 25%;
     left: 0;
     position: absolute;
   }
@@ -35,10 +37,13 @@
     position: relative;
     border-radius: 50%;
     position: relative;
-    width: 10%;
-    transition: all 0.3s;
+    width: 18%;
+    transition: all .3s;
     &:hover {
       transform: scale(1.1);
+    }
+    @media (max-width: $breakpoint-max) {
+        width: 58%;
     }
   }
   @include element('footer') {
@@ -65,6 +70,7 @@
   position: relative;
   width: 100%;
   height: 100vh;
+  min-height: 25rem;
   background: $background-about;
   @include element('header') {
     position: relative;
@@ -76,12 +82,12 @@
     margin: 0 auto;
     &.c-links__link {
       color: #000;
-      padding: 3px;
+      padding: .034rem;
       &:hover {
         cursor: pointer;
         color: $contact-href-color;
         background: $contact-href-background;
-        border-radius: 5px;
+        border-radius: .034rem;
       }
     }
   }
@@ -89,7 +95,7 @@
 
 .s-contact {
   width: 100%;
-  height: 100vh;
+  height: 10rem;
   background: $background-contact;
   position: relative;
   @include element('header') {
@@ -108,7 +114,7 @@
   }
   @include element('links') {
     width: 100%;
-    font-size: 54px;
+    font-size: 3.375rem;
     position: absolute;
     text-align: center;
     bottom: 10%;
@@ -129,13 +135,13 @@
 
 .c-links {
   @include element('link') {
-    padding: 15px;
+    padding: .9rem;
     color: $white;
     &:hover {
       cursor: pointer;
       color: $contact-href-color;
       background: $contact-href-background;
-      border-radius: 5px;
+      border-radius: .068rem;
     }
   }
 }
@@ -145,18 +151,19 @@
   margin: 0;
   padding: 0;
   list-style-type: none;
-  padding: 16px;
+  top: 25%;
+  position: relative;
   text-align: center;
   li {
-    padding: 16px;
+    padding: 1rem;
     a {
       transition: .2s ease;
       text-decoration: none;
       color: $white;
       &:hover {
-        border-top: 2px solid $white;
-        border-bottom: 2px solid $white;
-        padding: 6px 0;
+        border-top: .0348rem solid $white;
+        border-bottom: .0348rem solid $white;
+        padding: .682rem 0;
       }
     }
   }
